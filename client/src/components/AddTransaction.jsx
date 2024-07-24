@@ -82,10 +82,10 @@ const AddTransaction = () => {
                     <div className="mt-20 sm:mx-auto sm:w-full sm:max-w-sm">
                         <form className="space-y-10" onSubmit={handleSubmit}>
                             <div className='mt-6'>
-                                <input value={transaction.text} onChange={handleChange} id="text" name="text" type="text" autocomplete="text" placeholder='Enter description' required className="block dark:bg-darkBg w-full px-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                <input value={transaction.text} onChange={handleChange} id="text" name="text" type="text" autocomplete="text" placeholder='Enter description' required className="block dark:bg-darkBg w-full px-2 rounded-md border-0 py-1.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                             <div className="mt-6">
-                                <input value={transaction.amount} onChange={handleChange} id="amount" name="amount" type="number" autocomplete="current-password" placeholder='Enter amount' required className="block dark:bg-darkBg w-full px-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                <input value={transaction.amount} onChange={handleChange} id="amount" name="amount" type="number" autocomplete="current-password" placeholder='Enter amount' required className="block dark:bg-darkBg w-full px-2 rounded-md border-0 py-1.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
                             <div>
                                 <div className="relative font-Poppins h-10 w-full min-w-[200px]">

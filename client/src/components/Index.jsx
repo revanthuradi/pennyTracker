@@ -51,7 +51,7 @@ const Index = () => {
           <div className='text-white lg:w-[60%] rounded-xl bg-darkPurple w-[93%]  m-auto px-4 py-5'>
             <div className='flex  justify-between'>
               <div>
-                <h2 className=' font-titanium text-2xl tracking-wider'>{showBalance ? formatNumberIndian(balance?.income - balance?.expenses) : "...XXXXX"}</h2>
+                <h2 className=' font-titanium text-2xl tracking-wider'>{!isLoading && showBalance ? formatNumberIndian(balance?.income - balance?.expenses) : "...XXXXX"}</h2>
                 <p className=''>Total Balance</p>
               </div>
               <div className='mr-4 mt-1'>
