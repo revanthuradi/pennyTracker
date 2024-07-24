@@ -19,7 +19,9 @@ connectDB().then(() => {
   app.get("/", (req, res) => {
     res.send("hello");
   });
-
+  app.get("/", (req, res) => {
+    res.send("hello");
+  });
   app.use("/auth", authRouter);
   app.use("/api", tokenVerify, transactionRouter);
 
