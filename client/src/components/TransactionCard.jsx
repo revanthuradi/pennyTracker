@@ -43,7 +43,7 @@ const TransactionCard = ({ transaction }) => {
     }
     const handleDelete = async (e) => {
         e.stopPropagation()
-        const res = await axios.delete(`http://localhost:4000/api/deletetransaction?transactionId=${transaction._id}`)
+        const res = await axios.delete(`https://penny-tracker-server.vercel.app/api/deletetransaction?transactionId=${transaction._id}`)
         toast.success(res?.data?.message)
         try {
         } catch (err) {

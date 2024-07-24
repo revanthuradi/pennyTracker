@@ -41,7 +41,7 @@ const AddTransaction = () => {
         try {
             if (editTransaction) {
                 console.log("edit..", transaction)
-                const res = await axios.put(`http://localhost:4000/api/updatetransaction?transactionId=${transaction._id}`, transaction, {
+                const res = await axios.put(`https://penny-tracker-server.vercel.app/api/updatetransaction?transactionId=${transaction._id}`, transaction, {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
@@ -50,7 +50,7 @@ const AddTransaction = () => {
                 toast.success(res?.data?.message)
             } else {
                 console.log("add...", transaction)
-                const res = await axios.post(`http://localhost:4000/api/add?id=${userData._id}`, transaction, {
+                const res = await axios.post(`https://penny-tracker-server.vercel.app/api/add?id=${userData._id}`, transaction, {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }

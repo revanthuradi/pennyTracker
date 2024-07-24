@@ -19,7 +19,7 @@ const Statistics = () => {
     const getStats = async () => {
         try {
             const dat = []
-            const res = await axios.get(`http://localhost:4000/api/gettransactions/statistics/${transactionType}?id=${userData._id}`, {
+            const res = await axios.get(`https://penny-tracker-server.vercel.app/api/gettransactions/statistics/${transactionType}?id=${userData._id}`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }

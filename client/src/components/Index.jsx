@@ -20,12 +20,12 @@ const Index = () => {
   const fetchRecentTransactions = async () => {
     try {
       setIsloading(true)
-      const res = await axios.get(`http://localhost:4000/api/gettransactions/recent?id=${userData._id}`, {
+      const res = await axios.get(`https://penny-tracker-server.vercel.app/api/gettransactions/recent?id=${userData._id}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       })
-      const res2 = await axios.get(`http://localhost:4000/api/totalbalance?id=${userData._id}`, {
+      const res2 = await axios.get(`https://penny-tracker-server.vercel.app/api/totalbalance?id=${userData._id}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
