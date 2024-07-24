@@ -17,7 +17,7 @@ const Login = () => {
         const user = { email: e.target[0].value, password: e.target[1].value };
         try {
             setIsLoading(true)
-            const res = await axios.post(`http://localhost:4000/auth/login`, user)
+            const res = await axios.post(`https://penny-tracker-server.vercel.app/auth/login`, user)
             setData(res.data.user)
             setTokenValue(res.data.token)
             toast.success(res.data.message)

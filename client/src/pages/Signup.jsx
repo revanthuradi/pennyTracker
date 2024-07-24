@@ -8,6 +8,7 @@ import { useAuth } from '../Context/AuthContext';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import FullLoader from '../components/FullLoader';
+
 const Signup = () => {
   const { setData, setTokenValue, isAuthenticated } = useAuth()
   const [showPassword, setShowPassword] = useState(false)
@@ -26,7 +27,7 @@ const Signup = () => {
         console.log(values)
         try {
           setIsLoading(true)
-          const res = await axios.post(`http://localhost:4000/auth/signup`, values)
+          const res = await axios.post(`https://penny-tracker-server.vercel.app/auth/signup`, values)
           setData(res.data.user)
           setTokenValue(res.data.token)
           toast.success(res.data.message)
