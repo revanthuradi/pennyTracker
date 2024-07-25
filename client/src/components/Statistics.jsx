@@ -104,7 +104,7 @@ const Statistics = () => {
                             </div>
                             <div className='text-center py-3 text-lg font-medium flex  justify-center gap-2'>
                                 <p className='text-gray-500'>Total Money In :</p>
-                                <p>${totalIncome}</p>
+                                <p>{formatNumberIndian(totalIncome)}</p>
                             </div>
                             <div className='flex gap-4 flex-wrap px-6 py-3  justify-center  '>
                                 {

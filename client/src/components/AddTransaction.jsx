@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useAuth } from '../Context/AuthContext'
 import toast from 'react-hot-toast'
 import { IoMdCloseCircle } from "react-icons/io";
-
+import FullLoader from './FullLoader'
 const AddTransaction = () => {
     const { userData, editTransaction, setOpenAddTransaction } = useAuth()
     const initial = editTransaction ? editTransaction : {
@@ -13,6 +13,7 @@ const AddTransaction = () => {
         cashIn: "",
         cashOut: "",
     }
+    const [isloading, setIsloading] = useState(false)
     const categories = ["Salary", "Food", "Groceries", "Shopping", "Health Care", "Travel", "Education", "Housing", "Entertainment", "others"]
     const [transaction, setTransaction] = useState(initial)
     const handleChange = (e) => {
@@ -39,14 +40,13 @@ const AddTransaction = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
+            setIsloading(true)
             if (editTransaction) {
-                console.log("edit..", transaction)
                 const res = await axios.put(`https://penny-tracker-server.vercel.app/api/updatetransaction?transactionId=${transaction._id}`, transaction, {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
                 })
-                console.log(res)
                 toast.success(res?.data?.message)
             } else {
                 console.log("add...", transaction)
@@ -55,7 +55,6 @@ const AddTransaction = () => {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
                 })
-                console.log(res)
                 toast.success(res?.data?.message)
             }
             setTransaction({
@@ -65,9 +64,14 @@ const AddTransaction = () => {
                 cashIn: "",
                 cashOut: "",
             })
+            setIsloading(false)
         } catch (error) {
+            setIsloading(false)
             toast.error('something went wrong')
             console.log(error)
+
+        } finally {
+            setIsloading(false)
 
         }
     }
@@ -118,6 +122,9 @@ const AddTransaction = () => {
                     </div>
                 </div>
             </div>
+            {
+                isloading && <FullLoader />
+            }
         </div>
     )
 }
