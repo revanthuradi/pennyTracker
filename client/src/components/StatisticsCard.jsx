@@ -16,7 +16,7 @@ const StatisticsCard = ({ income, expenses ,showBalance}) => {
                 <div className='bg-[#FEE4FF]  h-fit py-2 px-6 rounded-xl '>
                     <p className='text-lg  text-gray-500'>Money Out</p>
                     <div className='flex  items-center justify-center gap-2 text-xs'>
-                        <h2 className='text-xl font-semibold text-center '>{sshowBalance ?  formatNumberIndian(expenses) : "XXXXX"}</h2>
+                        <h2 className='text-xl font-semibold text-center '>{showBalance ?  formatNumberIndian(expenses) : "XXXXX"}</h2>
                         <TfiStatsDown />
                     </div>
                 </div>
