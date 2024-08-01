@@ -66,7 +66,7 @@ const Index = () => {
         {/* {statistics} */}
         <div className='px-4 mt-4 '>
           <h2 className='text-lg mb-1 dark:text-white font-semibold'>Statistics</h2>
-          <StatisticsCard income={balance?.income} expenses={balance?.expenses} />
+          <StatisticsCard showBalance={showBalance} income={balance?.income} expenses={balance?.expenses} />
         </div>
         {/* {recent transactions} */}
         <div className='px-4 mt-4'>
