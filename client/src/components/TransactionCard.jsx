@@ -43,9 +43,9 @@ const TransactionCard = ({ transaction }) => {
     }
     const handleDelete = async (e) => {
         e.stopPropagation()
-        const res = await axios.delete(`https://penny-tracker-server.vercel.app/api/deletetransaction?transactionId=${transaction._id}`)
-        toast.success(res?.data?.message)
         try {
+            const res = await axios.delete(`https://penny-tracker-server.vercel.app/api/deletetransaction?transactionId=${transaction?._id}`)
+            toast.success(res?.data?.message)
         } catch (err) {
             toast.error(err?.response?.data?.message)
             console.log(err)
@@ -54,7 +54,7 @@ const TransactionCard = ({ transaction }) => {
 
 
     useEffect(() => {
-        const categoryItem = categories.find(item => item.name === transaction.category);
+        const categoryItem = categories.find(item => item.name === transaction?.category);
         if (categoryItem) {
             setIconComponent({ icon: categoryItem.icon });
         } else {
@@ -73,15 +73,15 @@ const TransactionCard = ({ transaction }) => {
                         </div>
                         <div>
                             <p className='font-semibold capitalize'>{transaction.text}</p>
-                            <p className='capitalize'>{transaction.category}</p>
+                            <p className='capitalize'>{transaction?.category}</p>
                         </div>
                     </div>
                     <div className='text-end'>
-                        <h2 className={`${transaction.cashOut ? "text-red-600" : "text-green-600"}  font-semibold`}>
-                            {transaction.cashOut ? <span>-</span> : <span>+</span>} 
-                            {formatNumberIndian(transaction.amount)}
+                        <h2 className={`${transaction?.cashOut ? "text-red-600" : "text-green-600"}  font-semibold`}>
+                            {transaction?.cashOut ? <span>-</span> : <span>+</span>}
+                            {formatNumberIndian(transaction?.amount)}
                         </h2>
-                        <p className='text-sm text-gray-500'>{moment(transaction.createdAt).format("MMM Do YY")}</p>
+                        <p className='text-sm text-gray-500'>{moment(transaction?.createdAt).format("MMM Do YY")}</p>
                     </div>
                 </div>
 
