@@ -34,7 +34,7 @@ const Acount = () => {
           <select
             onChange={handleCurrencyChange}
             id="currency"
-            className="peer dark:bg-darkBg  mt-3 h-8 cursor-pointer w-full font-Poppins rounded-[7px] border border-darkPurple dark:border-white  bg-transparent px-3   text-sm font-semibold text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-gray-900 focus:border-2 focus:border-gray-900  focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
+            className="peer dark:bg-darkBg dark:text-white  mt-3 h-8 cursor-pointer w-full font-Poppins rounded-[7px] border border-darkPurple dark:border-white  bg-transparent px-3   text-sm font-semibold text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-gray-900 focus:border-2 focus:border-gray-900  focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
             {
               currencyOptions.map(currency => <option value={currency.symbol}>{currency.name}</option>)
             }

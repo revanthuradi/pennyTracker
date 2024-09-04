@@ -60,7 +60,7 @@ const Index = () => {
                 }
               </div>
             </div>
-            <h2 className='mt-5'>{userData?.userName.toUpperCase()}</h2>
+            <h2 className='mt-5'>{userData?.userName?.toUpperCase()}</h2>
           </div>
         </div>
         {/* {statistics} */}
@@ -79,7 +79,7 @@ const Index = () => {
               isLoading && <Loader />
             }
             {
-              !isLoading && recentTransactions.length !== 0 ? (recentTransactions.map(transaction => <TransactionCard transaction={transaction} />)) : <h2>No Recent Transactions</h2>
+              !isLoading && recentTransactions.length !== 0 ? (recentTransactions.map(transaction => <TransactionCard transaction={transaction} />)) : <h2 className='dark:text-white'>No Recent Transactions</h2>
             }
           </div>
         </div>

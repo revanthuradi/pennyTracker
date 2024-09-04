@@ -12,7 +12,7 @@ const UserCard = () => {
       <div className='flex'>
         <img width="48" height="48" src="https://img.icons8.com/color/48/user-male-circle--v1.png" alt="user-male-circle--v1" />
         <div>
-          <h2 className=''>{getGreeting()} <span className='font-semibold'>{userData.userName.toUpperCase()}!</span></h2>
+          <h2 className=''>{getGreeting()} <span className='font-semibold'>{userData?.userName?.toUpperCase()}!</span></h2>
           <p className='text-sm text-gray-500'>{moment(new Date).format("MMM Do YY")}</p>
         </div>
       </div>

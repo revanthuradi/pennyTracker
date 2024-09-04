@@ -12,7 +12,7 @@ connectDB().then(() => {
   app.use(express.json());
   app.use(
     cors({
-      origin: ["https://penny-tracker-app.vercel.app"],
+      origin: ["https://penny-tracker-app.vercel.app",],
       credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     })
