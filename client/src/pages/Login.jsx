@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import axios from 'axios'
 import toast from 'react-hot-toast';
 import { useAuth } from '../Context/AuthContext'
@@ -5,7 +6,6 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import FullLoader from '../components/FullLoader';
 import { Link } from 'react-router-dom'
-
 const Login = () => {
     const { setData, setTokenValue } = useAuth()
     const [isLoading, setIsLoading] = useState(false)
