@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IoIosHome } from "react-icons/io";
 import { IoFastFood } from "react-icons/io5";
 import { FaCarAlt } from "react-icons/fa";
@@ -65,7 +65,7 @@ const TransactionCard = ({ transaction }) => {
     return (
         <>
 
-            <div className=' bg-[#ede7f0] px-3 py-2 rounded-lg mt-2 transition-all ease-in duration-200  ' onClick={handleTap}>
+            <div className=' bg-[#ede7f0] px-3 py-2 rounded-lg mt-2 transition-all ease-in duration-200  ' onClick={handleTap} onBlur={() => setShowMoreOptions(false)}>
                 <div className='flex justify-between '>
                     <div className='flex items-center gap-2'>
                         <div className='bg-darkPurple px-2 py-2 rounded-full '>
