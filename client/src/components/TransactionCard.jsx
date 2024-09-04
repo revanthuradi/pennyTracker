@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { IoIosHome } from "react-icons/io";
 import { IoFastFood } from "react-icons/io5";
 import { FaCarAlt } from "react-icons/fa";
@@ -84,11 +84,10 @@ const TransactionCard = ({ transaction }) => {
                         <p className='text-sm text-gray-500'>{moment(transaction?.createdAt).format("MMM Do YY")}</p>
                     </div>
                 </div>
-
                 {
                     showMoreOptions && <div className='flex justify-end py-2 gap-2  text-xl'>
-                        <MdEdit onClick={handleEdit} />
-                        <MdDelete onClick={handleDelete} />
+                        <MdEdit className='cursor-pointer' onClick={handleEdit} />
+                        <MdDelete className='cursor-pointer' onClick={handleDelete} />
                     </div>
                 }
             </div>
